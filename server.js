@@ -15,7 +15,7 @@ app.use(express.static("view"))
 //     res.send("Server Running")
 // })
 
-
+ /// home page
 
 app.get("/", (req, res) => {
     const pageData = allData.find(item => item.name === "Home");
@@ -26,6 +26,9 @@ app.get("/", (req, res) => {
         image: pageData.image
     });
 });
+
+
+// about page
 
 app.get("/about", (req, res) => {
    const pageData = allData.find(item => item.name === "About");
@@ -38,6 +41,7 @@ app.get("/about", (req, res) => {
 })
 
 
+// contect page
 
 app.get("/contect", (req, res) => {
    const pageData = allData.find(item => item.name === "Content");
@@ -49,6 +53,8 @@ app.get("/contect", (req, res) => {
     });
 })
 
+
+/// news page
 app.get("/news", (req, res) => {
     const pageData = allData.find(item => item.name === "News");
 
@@ -59,6 +65,8 @@ app.get("/news", (req, res) => {
     });
 })
 
+
+/// productt page
 app.get("/product", (req, res) => {
     const pageData = allData.find(item => item.name === "Product");
 
