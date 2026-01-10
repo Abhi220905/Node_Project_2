@@ -1,29 +1,29 @@
 <%- include("../layout/headSection") %>
-  <%- include("../layout/header") %>
+    <%- include("../layout/header") %>
 
-    <div class="container my-5">
-      <h1 class="text-center mb-4">
-        <%= name %> Page
-      </h1>
+        <div class="container my-5">
+            <h1 class="text-center mb-5 fw-bold  ">
+                <%= title %>
+            </h1>
 
-      <div class="row justify-content-center">
-        <div class="col-md-5">
+            <div class="row g-4 justify-content-center">
+                <% allData.forEach(item=> { %>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 shadow border-0">
 
-          <div class="card shadow border-0">
-            <img src="<%= image %>" class="card-img-top single-img" alt="Page Image">
+                            <img src="<%= item.image %>" class="card-img-top" alt="<%= item.name %>">
 
-            <div class="card-body text-center">
-              <h4 class="fw-bold">
-                <%= name %>
-              </h4>
-              <p class="text-muted">
-                <%= name %>
-              </p>
+                            <div class="card-body text-center">
+                                <h5 class="fw-bold">
+                                    <%= item.name %>
+                                </h5>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <% }) %>
             </div>
-          </div>
-
         </div>
-      </div>
-    </div>
 
-    <%- include("../layout/footer") %>
+        <%- include("../layout/footer") %>
